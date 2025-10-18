@@ -1,0 +1,26 @@
+title: AI-Powered Travel Booking and Planning Website
+subtitle: Software Project Proposal
+supervisor: Teacher Nguyễn Huy Khánh, Teacher Trần Duy Quang, Teacher Trần Văn Quý
+university: University of Science
+course: Faculty of Information Technology
+academicyear: Academic Year 2025-2026
+fontsize: 12pt
+numbersections: true
+toc: true
+toc-color: blue
+
+# Team information (for internal use)
+group_id: "00"
+team:
+  - name: Lưu Thanh Thúy
+    id: 22127410
+    role: Project Manager
+    email: ltthuy22@clc.fitus.edu.vn
+  - name: Võ Lê Việt Tú
+    id: 22127435
+    role: Lead Developer
+    email: vlvtu22@clc.fitus.edu.vn
+  - name: Trần Thị Cát Tường
+    id: 22127444
+    role: AI Specialist
+    email: ttctuong22@clc.fitus.edu.vn

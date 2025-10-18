@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Define pandoc commands
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Define other pandoc commands that might be needed
+\newcommand{\passthrough}[1]{#1}
+
+% Hyperref configuration
+\hypersetup{
+    colorlinks=true,
+    linkcolor=$if(toc-color)$$toc-color$$else$black$endif$,
+    urlcolor=$if(toc-color)$$toc-color$$else$blue$endif$,
+    citecolor=$if(toc-color)$$toc-color$$else$black$endif$
+}
+
+\makeatletter
+\def\makecoverpage{%
+\begin{titlepage}
+  \thispagestyle{empty}
+  \vspace*{3cm}
+  \noindent\rule{2pt}{10cm}\hspace{1.5cm}%
+  \begin{minipage}{0.7\textwidth}
+    {\LARGE\bfseries $if(title)$$title$$else$Project Title$endif$\par}
+
+    $if(subtitle)$
+      \vspace{1em}
+      {\large $subtitle$\par}
+    $endif$
+
+    $if(supervisor)$
+      \vspace{2em}
+      {\normalsize\itshape with the supervision of $supervisor$\par}
+    $endif$
+
+    $if(team)$
+      \vspace{2em}
+      {\large $for(team)$$team.id$ - $team.name$$sep$ \\ $endfor$\par}
+    $endif$
+
+    \vspace{3em}
+
+    $if(university)$
+      {\normalsize $university$\par}
+    $endif$
+    $if(course)$
+      {\normalsize $course$\par}
+    $endif$
+    $if(academicyear)$
+      {\normalsize $academicyear$\par}
+    $endif$
+  \end{minipage}
+  \vfill
+\end{titlepage}
+}
+\makeatother
+
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+
+\begin{document}
+
+\makecoverpage
+
+$if(toc)$
+\newpage
+\tableofcontents
+\newpage
+$endif$
+
+$body$
+
+\end{document}
